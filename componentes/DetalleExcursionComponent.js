@@ -9,9 +9,12 @@ function RenderExcursion(props) {
   if (excursion != null) {
     return (
       <Card>
-        <Card.Title>{excursion.nombre}</Card.Title>
         <Card.Divider />
-        <Card.Image source={require("./imagenes/40Años.png")}></Card.Image>
+        <Card.Image source={require("./imagenes/40Años.png")}>
+          <Card.Title style={{ color: "chocolate", fontSize: 30 }}>
+            {excursion.nombre}
+          </Card.Title>
+        </Card.Image>
         <Text style={{ margin: 20 }}>{excursion.descripcion}</Text>
       </Card>
     );
