@@ -15,6 +15,7 @@ import Contacto from "./ContactoComponent";
 import QuienesSomos from "./QuienesSomosComponent";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Icon } from "@rneui/themed";
+import { colorGaztaroaClaro, colorGaztaroaOscuro } from "../comun/comun";
 
 function CustomDrawerContent(props) {
   return (
@@ -50,7 +51,7 @@ function HomeNavegador({ navigation }) {
         headerMode: "screen",
         headerTintColor: "#fff",
         headerTitleAlign: "center",
-        headerStyle: { backgroundColor: "#015afc" },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: "#fff" },
         headerLeft: () => (
           <Icon
@@ -80,7 +81,7 @@ function ContactoNavegador({ navigation }) {
         headerMode: "screen",
         headerTintColor: "#fff",
         headerTitleAlign: "center",
-        headerStyle: { backgroundColor: "#015afc" },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: "#fff" },
         headerLeft: () => (
           <Icon
@@ -110,7 +111,7 @@ function QuienesSomosNavegador({ navigation }) {
         headerMode: "screen",
         headerTintColor: "#fff",
         headerTitleAlign: "center",
-        headerStyle: { backgroundColor: "#015afc" },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: "#fff" },
         headerLeft: () => (
           <Icon
@@ -140,7 +141,7 @@ function CalendarioNavegador({ navigation }) {
       screenOptions={{
         headerTintColor: "#fff",
         headerTitleAlign: "center",
-        headerStyle: { backgroundColor: "#015afc" },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: "#fff" },
       }}>
       <Stack.Screen
@@ -177,7 +178,7 @@ function DrawerNavegador() {
       screenOptions={{
         headerShown: false,
         drawerStyle: {
-          backgroundColor: "#c2d3da",
+          backgroundColor: colorGaztaroaClaro,
         },
       }}>
       <Drawer.Screen
@@ -256,7 +257,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   drawerHeader: {
-    backgroundColor: "#015afc",
+    backgroundColor: colorGaztaroaOscuro,
     height: 100,
     alignItems: "center",
     justifyContent: "center",
