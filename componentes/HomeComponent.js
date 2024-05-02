@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import { Text, ScrollView, View } from "react-native";
 import { Card } from "@rneui/themed";
-import { EXCURSIONES } from "../comun/excursiones";
-import { CABECERAS } from "../comun/cabeceras";
-import { ACTIVIDADES } from "../comun/actividades";
-import { baseUrl, imagen40 } from "../comun/comun";
+import { baseUrl } from "../comun/comun";
+import { connect } from "react-redux";
+
+const mapStateToProps = (state) => {
+  return {
+    cabeceras: state.cabeceras,
+    excursiones: state.excursiones,
+    actividades: state.actividades,
+  }
+};
 
 function RenderItem(props) {
   const item = props.item;
@@ -27,31 +33,23 @@ function RenderItem(props) {
 }
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      excursiones: EXCURSIONES,
-      cabeceras: CABECERAS,
-      actividades: ACTIVIDADES,
-    };
-  }
 
   render() {
     return (
       <ScrollView>
         <RenderItem
           item={
-            this.state.cabeceras.filter((cabecera) => cabecera.destacado)[0]
+            this.props.cabeceras.cabeceras.filter((cabecera) => cabecera.destacado)[0]
           }
         />
         <RenderItem
           item={
-            this.state.excursiones.filter((excursion) => excursion.destacado)[0]
+            this.props.excursiones.excursiones.filter((excursion) => excursion.destacado)[0]
           }
         />
         <RenderItem
           item={
-            this.state.actividades.filter((actividad) => actividad.destacado)[0]
+            this.props.actividades.actividades.filter((actividad) => actividad.destacado)[0]
           }
         />
       </ScrollView>
@@ -59,4 +57,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect(mapStateToProps)(Home);
